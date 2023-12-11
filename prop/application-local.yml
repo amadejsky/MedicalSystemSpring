@@ -1,0 +1,19 @@
+spring:
+  h2.console:
+    enabled: true
+    path: '/console'
+  datasource:
+    url: 'jdbc:h2:file:./patients-db'
+  jpa:
+    hibernate:
+      ddl-auto: validate
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+keycloak:
+  auth-server-url: 'http://localhost:8180/auth'
+  realm: 'App'
+  resource: 'management-spring-app'
+  public-client: true

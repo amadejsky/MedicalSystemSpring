@@ -1,0 +1,5 @@
+medical\Controller\UserManageController.class
+medical\Main.class
+medical\Repository\UserManageRepo.class
+medical\Model\User.class
+medical\Service\UserManageService.class
