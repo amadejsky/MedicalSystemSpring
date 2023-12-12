@@ -1,4 +1,4 @@
-create table if not exists patient(
+create table if not exists PATIENTS(
     id bigint auto_increment,
     name varchar2(100) not null ,
     surname varchar2(100) not null ,

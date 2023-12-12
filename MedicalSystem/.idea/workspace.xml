@@ -5,20 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="272a3d2e-fa87-46d6-8ce4-693aef3366f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/add-edit-employee.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/list-employees.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MedicalSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MedicalSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-db.mv.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/medical/Controller/UserManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Controller/UserManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/medical/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Model/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/medical/Repository/UserManageRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Repository/UserManageRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/medical/Model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Model/Patient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/medical/Service/UserManageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Service/UserManageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/medical/Controller/UserManageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/medical/Controller/UserManageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/medical/Model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/medical/Repository/UserManageRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/medical/Repository/UserManageRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/medical/Service/UserManageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/medical/Service/UserManageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/medical/Model/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/medical/Model/Patient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,35 +43,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;e06e1939627478f89e1916876ab3b125&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/CodeProjects/MedicalSystem/MedicalSystem/src/main/resources/templates",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "spring.configuration.checksum": "e06e1939627478f89e1916876ab3b125",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;,
-      &quot;h2&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql",
+      "h2"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CodeProjects\MedicalSystem\MedicalSystem\src\main\resources\templates" />
+      <recent name="D:\CodeProjects\MedicalSystem\MedicalSystem\src\main\java\medical" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\CodeProjects\MedicalSystem\MedicalSystem\src\main\resources" />
     </key>
@@ -112,6 +113,8 @@
       <workItem from="1702381307153" duration="667000" />
       <workItem from="1702382226802" duration="939000" />
       <workItem from="1702383192097" duration="672000" />
+      <workItem from="1702383969350" duration="60000" />
+      <workItem from="1702384279768" duration="2563000" />
     </task>
     <servers />
   </component>

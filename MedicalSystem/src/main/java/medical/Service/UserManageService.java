@@ -2,6 +2,8 @@ package medical.Service;
 
 import medical.Model.Patient;
 import medical.Repository.UserManageRepo;
+import medical.exception.RecordNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,69 +11,86 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 @Service
-public class UserManageService implements UserManageRepo {
+public class UserManageService {
 
-    @Override
-    public <S extends Patient> S save(S entity) {
-        return null;
+    @Autowired
+    UserManageRepo repository;
+
+    public List<Patient> getAllPatients()
+    {
+        System.out.println("getAllPatients");
+        List<Patient> result = (List<Patient>) repository.findAll();
+
+        if(result.size() > 0) {
+            return result;
+        } else {
+            return new ArrayList<Patient>();
+        }
     }
 
-    @Override
-    public <S extends Patient> Iterable<S> saveAll(Iterable<S> entities) {
-        return null;
+
+    public Patient getPatientById(Long id)
+    {
+        System.out.println("getEmployeeById");
+        Optional<Patient> employee = repository.findById(id);
+
+        if(employee.isPresent()) {
+            return employee.get();
+        } else {
+            throw new IllegalArgumentException("No employee record exist for given id");
+        }
     }
 
-    @Override
-    public Optional<Patient> findById(Long aLong) {
-        return Optional.empty();
+    public Patient createOrUpdatePatient(Patient patient)
+    {
+        System.out.println("createOrUpdatePatient");
+        // Create new entry
+        if(patient.getId()  == null)
+        {
+            patient = repository.save(patient);
+
+            return patient;
+        }
+        else
+        {
+            // update existing entry
+            Optional<Patient> employee = repository.findById(patient.getId());
+
+            if(employee.isPresent())
+            {
+                Patient newpatient = employee.get();
+                newpatient.setName(patient.getName());
+                newpatient.setSurname(patient.getSurname());
+                newpatient.setAge(patient.getAge());
+                newpatient.setDescription(patient.getDescription());
+
+                newpatient = repository.save(newpatient);
+
+                return newpatient;
+            } else {
+                patient = repository.save(patient);
+
+                return patient;
+            }
+        }
     }
 
-    @Override
-    public boolean existsById(Long aLong) {
-        return false;
-    }
+    public void deletePatientById(Long id) throws RecordNotFoundException
+    {
+        System.out.println("deleteEmployeeById");
 
-    @Override
-    public Iterable<Patient> findAll() {
-        return null;
-    }
+        Optional<Patient> employee = repository.findById(id);
 
-    @Override
-    public Iterable<Patient> findAllById(Iterable<Long> longs) {
-        return null;
-    }
-
-    @Override
-    public long count() {
-        return 0;
-    }
-
-    @Override
-    public void deleteById(Long aLong) {
-
-    }
-
-    @Override
-    public void delete(Patient entity) {
-
-    }
-
-    @Override
-    public void deleteAllById(Iterable<? extends Long> longs) {
-
-    }
-
-    @Override
-    public void deleteAll(Iterable<? extends Patient> entities) {
-
-    }
-
-    @Override
-    public void deleteAll() {
-
+        if(employee.isPresent())
+        {
+            repository.deleteById(id);
+        } else {
+            throw new RecordNotFoundException("No employee record exist for given id");
+        }
     }
 }

@@ -1,25 +1,34 @@
 package medical.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
-
+@Table(name="PATIENTS")
 public class Patient {
-    public Patient(String name, String surname, Integer age, String description) {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name="name")
+    @NotBlank(message = "Imię pacjenta jest wymagane")
+    private String name;
+    @Column(name="surname")
+    @NotBlank(message = "Nazwisko pacjenta jest wymagane")
+    private String surname;
+    @Column(name="age")
+    @NotNull(message = "Wiek pacjenta jest wymagany")
+    private Long age;
+    @Column(name="description")
+    @NotBlank(message = "Opis zdrowotny pacjenta jest wymagany")
+    private String description;
+    public Patient(String name, String surname, Long age, String description) {
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.description = description;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
 
     public Patient() {
 
@@ -49,11 +58,11 @@ public class Patient {
         this.surname = surname;
     }
 
-    public Integer getAge() {
+    public Long getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(Long age) {
         this.age = age;
     }
 
@@ -65,14 +74,14 @@ public class Patient {
         this.description = description;
     }
 
-    @NotBlank(message = "Imię pacjenta jest wymagane")
-    private String name;
-    @NotBlank(message = "Nazwisko pacjenta jest wymagane")
-    private String surname;
-    @NotNull(message = "Wiek pacjenta jest wymagany")
-    private Integer age;
-    @NotBlank(message = "Opis zdrowotny pacjenta jest wymagany")
-    private String description;
-
-
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", age=" + age +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
