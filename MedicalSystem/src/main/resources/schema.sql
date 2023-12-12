@@ -1,5 +1,5 @@
-create table patient(
-    id int auto_increment,
+create table if not exists patient(
+    id bigint auto_increment,
     name varchar2(100) not null ,
     surname varchar2(100) not null ,
     age int not null,

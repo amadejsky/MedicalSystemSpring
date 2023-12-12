@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goły Szkielet</title>
+</head>
+<body>
+<!--/*@thymesVar id="patient" type="medical.Model.Patient"*/-->
+<form action="#" th:action="@{/adduser}" th:object="${patient}" method="post">
+    <label for="name">Imię</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    <label for="surname">Nazwisko</label>
+    <input type="text" th:field="*{surname}" id="surname" placeholder="surname">
+    <span th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></span>
+    <label for="surname">Wiek</label>
+    <input type="number" th:field="*{age}" id="age" placeholder="age">
+    <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+    <label for="description">Wpis Medyczny</label>
+    <input type="text" th:field="*{description}" id="description" placeholder="description">
+    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+    <input type="submit" value="Add User">
+</form>
+</body>
+</html>

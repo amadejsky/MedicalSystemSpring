@@ -9,9 +9,8 @@ import jakarta.validation.constraints.NotNull;
 
 @Entity
 
-public class User {
-    public User(long id, String name, String surname, Integer age, String description) {
-        this.id = id;
+public class Patient {
+    public Patient(String name, String surname, Integer age, String description) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -19,10 +18,10 @@ public class User {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    public User() {
+    public Patient() {
 
     }
 
