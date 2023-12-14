@@ -4,93 +4,79 @@ import medical.Model.Patient;
 import medical.Repository.UserManageRepo;
 import medical.exception.RecordNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Function;
+
 @Service
 public class UserManageService {
 
     @Autowired
     UserManageRepo repository;
 
-    public List<Patient> getAllPatients()
-    {
+    public List<Patient> getAllPatients() {
         System.out.println("getAllPatients");
         List<Patient> result = (List<Patient>) repository.findAll();
 
-        if(result.size() > 0) {
+        if (result.size() > 0) {
             return result;
         } else {
-            return new ArrayList<Patient>();
+            return new ArrayList<>();
         }
     }
 
+    public Patient getPatientById(Long id) throws RecordNotFoundException {
+        System.out.println("getPatientById");
+        Optional<Patient> patient = repository.findById(id);
 
-    public Patient getPatientById(Long id)
-    {
-        System.out.println("getEmployeeById");
-        Optional<Patient> employee = repository.findById(id);
-
-        if(employee.isPresent()) {
-            return employee.get();
+        if (patient.isPresent()) {
+            return patient.get();
         } else {
-            throw new IllegalArgumentException("No employee record exist for given id");
+            throw new RecordNotFoundException("No patient record exist for given id");
         }
     }
 
-    public Patient createOrUpdatePatient(Patient patient)
-    {
+    public Patient createOrUpdatePatient(Patient patient) {
         System.out.println("createOrUpdatePatient");
         // Create new entry
-        if(patient.getId()  == null)
-        {
+        if (patient.getId() == null) {
             patient = repository.save(patient);
-
+            System.out.println("Patient have null id");
             return patient;
-        }
-        else
-        {
+        } else {
             // update existing entry
-            Optional<Patient> employee = repository.findById(patient.getId());
+            Optional<Patient> patientOptional = repository.findById(patient.getId());
 
-            if(employee.isPresent())
-            {
-                Patient newpatient = employee.get();
-                newpatient.setName(patient.getName());
-                newpatient.setSurname(patient.getSurname());
-                newpatient.setAge(patient.getAge());
-                newpatient.setDescription(patient.getDescription());
+            if (patientOptional.isPresent()) {
+                Patient existingPatient = patientOptional.get();
+                existingPatient.setName(patient.getName());
+                existingPatient.setSurname(patient.getSurname());
+                existingPatient.setAge(patient.getAge());
+                existingPatient.setDescription(patient.getDescription());
 
-                newpatient = repository.save(newpatient);
+                existingPatient = repository.save(existingPatient);
 
-                return newpatient;
+                return existingPatient;
             } else {
                 patient = repository.save(patient);
-
                 return patient;
             }
         }
     }
 
-    public void deletePatientById(Long id) throws RecordNotFoundException
-    {
-        System.out.println("deleteEmployeeById");
+    public void deletePatientById(Long id) throws RecordNotFoundException {
+        System.out.println("deletePatientById");
 
-        Optional<Patient> employee = repository.findById(id);
+        Optional<Patient> patient = repository.findById(id);
 
-        if(employee.isPresent())
-        {
+        if (patient.isPresent()) {
             repository.deleteById(id);
         } else {
-            throw new RecordNotFoundException("No employee record exist for given id");
+            throw new RecordNotFoundException("No patient record exist for given id");
         }
     }
+
+
 }

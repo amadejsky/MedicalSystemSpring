@@ -18,11 +18,11 @@ public class Patient {
     private String surname;
     @Column(name="age")
     @NotNull(message = "Wiek pacjenta jest wymagany")
-    private Long age;
+    private int age;
     @Column(name="description")
     @NotBlank(message = "Opis zdrowotny pacjenta jest wymagany")
     private String description;
-    public Patient(String name, String surname, Long age, String description) {
+    public Patient(String name, String surname, int age, String description) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -34,7 +34,7 @@ public class Patient {
 
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -58,11 +58,11 @@ public class Patient {
         this.surname = surname;
     }
 
-    public Long getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Long age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

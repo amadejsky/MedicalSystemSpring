@@ -1,5 +1,5 @@
 create table if not exists PATIENTS(
-    id bigint auto_increment,
+    id INT auto_increment PRIMARY KEY ,
     name varchar2(100) not null ,
     surname varchar2(100) not null ,
     age int not null,
