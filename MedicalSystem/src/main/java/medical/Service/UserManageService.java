@@ -66,6 +66,10 @@ public class UserManageService {
         }
     }
 
+    public Patient addPatient(Patient patient){
+        return repository.save(patient);
+    }
+
     public void deletePatientById(Long id) throws RecordNotFoundException {
         System.out.println("deletePatientById");
 

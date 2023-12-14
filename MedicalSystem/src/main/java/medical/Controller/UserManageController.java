@@ -75,6 +75,12 @@ public class UserManageController
         return "redirect:/";
     }
 
+    @RequestMapping(path="/addPatientToDataBase", method=RequestMethod.POST)
+    public String addPatientToDataBase(Patient patient){
+        service.addPatient(patient);
+        return "redirect:/";
+    }
+
 
 
 }
