@@ -81,6 +81,20 @@ public class UserManageController
         return "redirect:/";
     }
 
+    @RequestMapping(path = "/addPatient")
+    public String addPatient(Model model) throws RecordNotFoundException{
+            model.addAttribute("patient", new Patient());
+        return "add-user";
+    }
+
+    @RequestMapping(path = "/list-patients")
+    public String list(Model model){
+        List<Patient> list = service.getAllPatients();
+
+        model.addAttribute("patients", list);
+        return "list-patients";
+    }
+
 
 
 }

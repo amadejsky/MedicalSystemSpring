@@ -9,10 +9,10 @@
       <change beforePath="$PROJECT_DIR$/ms-db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/ms-db.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-db.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/ms-db.trace.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/medical/Controller/UserManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Controller/UserManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/medical/Service/UserManageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Service/UserManageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-edit-patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-edit-patient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/list-patients.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/list-patients.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/medical/Controller/UserManageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/medical/Controller/UserManageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/medical/Service/UserManageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/medical/Service/UserManageService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +127,7 @@
       <workItem from="1702585897341" duration="35000" />
       <workItem from="1702585960580" duration="534000" />
       <workItem from="1702586510365" duration="1000" />
+      <workItem from="1702900326797" duration="3801000" />
     </task>
     <servers />
   </component>
