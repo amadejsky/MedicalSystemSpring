@@ -95,6 +95,12 @@ public class UserManageController
         return "list-patients";
     }
 
+    @RequestMapping(path="/fdaapi")
+    public String fdaApi(Model fda){
+
+        return "fdaapi";
+    }
+
 
 
 }
