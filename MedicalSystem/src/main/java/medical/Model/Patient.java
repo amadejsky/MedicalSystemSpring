@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.util.List;
+
 @Entity
 @Table(name="PATIENTS")
 public class Patient {
@@ -22,6 +24,17 @@ public class Patient {
     @Column(name="description")
     @NotBlank(message = "Opis zdrowotny pacjenta jest wymagany")
     private String description;
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
+    private List<Visit> visits;
+
+
+    public List<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(List<Visit> visits) {
+        this.visits = visits;
+    }
     public Patient(String name, String surname, int age, String description) {
         this.name = name;
         this.surname = surname;

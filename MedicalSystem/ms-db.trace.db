@@ -59,3 +59,42 @@ The object is already closed [90007-224]
 2023-12-18 13:55:18.394925+01:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
 The object is already closed [90007-224]
+2024-01-02 16:38:27.839600+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-01-02 16:38:49.094337+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-01-02 16:43:50.026694+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-01-02 16:45:39.933514+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-01-02 16:45:48.150384+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-01-02 16:46:37.504245+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VISITS" not found; SQL statement:
+select v1_0.patient_id,v1_0.id,v1_0.visit_date from visits v1_0 where v1_0.patient_id=? [42102-224]
+2024-01-02 16:46:46.657308+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VISITS" not found; SQL statement:
+select v1_0.patient_id,v1_0.id,v1_0.visit_date from visits v1_0 where v1_0.patient_id=? [42102-224]
+2024-01-02 16:46:50.041274+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VISITS" not found; SQL statement:
+select v1_0.patient_id,v1_0.id,v1_0.visit_date from visits v1_0 where v1_0.patient_id=? [42102-224]
+2024-01-02 16:48:14.793345+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VISITS" not found; SQL statement:
+select v1_0.patient_id,v1_0.id,v1_0.visit_date from visits v1_0 where v1_0.patient_id=? [42102-224]
+2024-01-02 16:48:54.561922+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VISITS" not found; SQL statement:
+select v1_0.patient_id,v1_0.id,v1_0.visit_date from visits v1_0 where v1_0.patient_id=? [42102-224]
+2024-01-02 16:53:13.044370+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VISITS" not found; SQL statement:
+select v1_0.patient_id,v1_0.id,v1_0.visit_date from visits v1_0 where v1_0.patient_id=? [42102-224]
+2024-01-02 16:53:22.545069+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-01-02 16:53:35.722560+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-01-02 16:53:38.750852+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VISITS" not found; SQL statement:
+select v1_0.patient_id,v1_0.id,v1_0.visit_date from visits v1_0 where v1_0.patient_id=? [42102-224]
+2024-01-02 16:59:20.149145+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-01-02 16:59:41.991555+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
