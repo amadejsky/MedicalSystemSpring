@@ -71,7 +71,7 @@
                                 <th>Age</th>
                                 <th>Description</th>
                                 <th>&nbsp</th>
-<!--                                <th>Edit</th>-->
+                                <!--                                <th>Edit</th>-->
                                 <th>Delete</th>
                             </tr>
                         </thead>
@@ -86,6 +86,11 @@
 <!--                                    <a th:href="@{/edit/{id}(id=${patient.id})}" class="btn btn-primary">-->
 <!--                                        <i class="fas fa-user-edit ml-2"></i>-->
 <!--                                    </a>-->
+                                    <!-- Add a button for adding visits -->
+                                    <a th:href="@{/addVisit/{id}(id=${patient.id})}" class="btn btn-primary">
+                                        <i class="fas fa-calendar-plus ml-2"></i> Add Visit
+                                    </a>
+
                                 </td>
                                 <td>
                                     <a th:href="@{/delete/{id}(id=${patient.id})}" class="btn btn-primary">

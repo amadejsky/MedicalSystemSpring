@@ -3,6 +3,7 @@ package medical.Controller;
 import com.couchbase.client.core.error.ServerOutOfMemoryException;
 import medical.Model.Patient;
 import jakarta.validation.Valid;
+import medical.Model.Visit;
 import medical.Service.UserManageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 import medical.Service.UserManageService;
+
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import medical.exception.RecordNotFoundException;
@@ -100,6 +103,29 @@ public class UserManageController
 
         return "fdaapi";
     }
+
+    @PostMapping(path = "/addVisit/{patientId}")
+    public String addVisit(@PathVariable("patientId") Long patientId, @RequestParam(name = "visitDate", required = false) LocalDate visitDate) throws RecordNotFoundException {
+        Visit visit = new Visit();
+        visit.setVisitDate(visitDate);
+
+        service.addVisitToPatient(patientId, visit);
+
+        return "add-visit";
+    }
+
+    @PostMapping(path = "/updateVisit/{patientId}")
+    public String updateVisit(@PathVariable("patientId") Long patientId, @RequestParam("visitId") Long visitId, @RequestParam(name = "visitDate", required = false) LocalDate visitDate) throws RecordNotFoundException {
+        Visit visit = new Visit();
+        visit.setId(visitId);
+        visit.setVisitDate(visitDate);
+
+        service.updateVisit(patientId, visit);
+
+        return "add-visit";
+    }
+
+
 
 
 

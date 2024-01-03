@@ -1,6 +1,7 @@
 package medical.Service;
 
 import medical.Model.Patient;
+import medical.Model.Visit;
 import medical.Repository.UserManageRepo;
 import medical.exception.RecordNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,6 +78,42 @@ public class UserManageService {
 
         if (patient.isPresent()) {
             repository.deleteById(id);
+        } else {
+            throw new RecordNotFoundException("No patient record exist for given id");
+        }
+    }
+    public Patient addVisitToPatient(Long patientId, Visit visit) throws RecordNotFoundException {
+        Optional<Patient> optionalPatient = repository.findById(patientId);
+
+        if (optionalPatient.isPresent()) {
+            Patient patient = optionalPatient.get();
+            visit.setPatient(patient);
+            patient.getVisits().add(visit);
+            repository.save(patient);
+            return patient;
+        } else {
+            throw new RecordNotFoundException("No patient record exist for given id");
+        }
+    }
+
+    public Patient updateVisit(Long patientId, Visit visit) throws RecordNotFoundException {
+        Optional<Patient> optionalPatient = repository.findById(patientId);
+
+        if (optionalPatient.isPresent()) {
+            Patient patient = optionalPatient.get();
+            List<Visit> visits = patient.getVisits();
+
+            // Znajdź wizytę i zaktualizuj jej dane
+            for (Visit existingVisit : visits) {
+                if (existingVisit.getId().equals(visit.getId())) {
+                    existingVisit.setVisitDate(visit.getVisitDate());
+                    // ... inne pola wizyty
+                    break;
+                }
+            }
+
+            repository.save(patient);
+            return patient;
         } else {
             throw new RecordNotFoundException("No patient record exist for given id");
         }
