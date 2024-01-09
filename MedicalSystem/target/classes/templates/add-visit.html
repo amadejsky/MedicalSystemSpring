@@ -21,13 +21,13 @@
         <div class="card-body">
             <div class="col-md-10">
                 <!--/*@thymesVar id="patient" type="medical.Model.Patient"*/-->
-                <form th:action="@{/addVisit/{patientId}}" method="post">
+                <form th:action="@{/addVisit/{patientId}}" method="post" th:object="${visit}">
                     <input type="hidden" th:name="patientId" th:value="${patient.id}" />
 
                     <div class="row">
                         <div class="form-group col-md-8">
                             <label for="visitDate" class="col-form-label">Visit Date</label>
-                            <input type="date" th:name="visitDate" class="form-control" id="visitDate" required />
+                            <input type="date"  th:field="*{visitDate}" class="form-control" id="visitDate" required  />
                         </div>
 
                         <div class="col-md-6">

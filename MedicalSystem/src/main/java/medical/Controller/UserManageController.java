@@ -103,6 +103,17 @@ public class UserManageController
 
         return "fdaapi";
     }
+    @GetMapping("/addVisit/{id}")
+    public String showAddVisitForm(@PathVariable Long id, Model model) throws RecordNotFoundException {
+        Patient patient = service.getPatientById(id);
+        model.addAttribute("patient", patient);
+
+        Visit visit = new Visit();
+        visit.setPatient(patient);
+        model.addAttribute(visit);
+
+        return "add-visit";
+    }
 
     @PostMapping(path = "/addVisit/{patientId}")
     public String addVisit(@PathVariable("patientId") Long patientId, @RequestParam(name = "visitDate", required = false) LocalDate visitDate) throws RecordNotFoundException {
