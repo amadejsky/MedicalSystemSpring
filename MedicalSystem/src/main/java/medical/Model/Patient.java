@@ -24,7 +24,7 @@ public class Patient {
     @Column(name="description")
     @NotBlank(message = "Opis zdrowotny pacjenta jest wymagany")
     private String description;
-    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Visit> visits;
 
 

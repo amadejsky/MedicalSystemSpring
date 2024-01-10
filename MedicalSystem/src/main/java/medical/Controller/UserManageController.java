@@ -98,6 +98,11 @@ public class UserManageController
         return "list-patients";
     }
 
+    @RequestMapping(path = "/homepage")
+    public String homepage(Model model){
+        return "homepage";
+    }
+
     @RequestMapping(path="/fdaapi")
     public String fdaApi(Model fda){
 
@@ -110,19 +115,23 @@ public class UserManageController
 
         Visit visit = new Visit();
         visit.setPatient(patient);
-        model.addAttribute(visit);
+        model.addAttribute("visit",visit);
 
         return "add-visit";
     }
 
-    @PostMapping(path = "/addVisit/{patientId}")
-    public String addVisit(@PathVariable("patientId") Long patientId, @RequestParam(name = "visitDate", required = false) LocalDate visitDate) throws RecordNotFoundException {
+    @PostMapping(path = "/visit/{patientId}")
+    public String addVisit(
+            @PathVariable("patientId") Long patientId,
+            @RequestParam(name = "visitDate", required = false) LocalDate visitDate
+    ) throws RecordNotFoundException {
         Visit visit = new Visit();
         visit.setVisitDate(visitDate);
 
         service.addVisitToPatient(patientId, visit);
 
-        return "add-visit";
+
+        return "list-patients";
     }
 
     @PostMapping(path = "/updateVisit/{patientId}")

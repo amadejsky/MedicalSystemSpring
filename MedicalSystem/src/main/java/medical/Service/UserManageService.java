@@ -4,8 +4,10 @@ import medical.Model.Patient;
 import medical.Model.Visit;
 import medical.Repository.UserManageRepo;
 import medical.exception.RecordNotFoundException;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,17 +29,29 @@ public class UserManageService {
             return new ArrayList<>();
         }
     }
-
     public Patient getPatientById(Long id) throws RecordNotFoundException {
         System.out.println("getPatientById");
-        Optional<Patient> patient = repository.findById(id);
+        Optional<Patient> patientOptional = repository.findById(id);
 
-        if (patient.isPresent()) {
-            return patient.get();
+        if (patientOptional.isPresent()) {
+            Patient patient = patientOptional.get();
+            Hibernate.initialize(patient.getVisits());
+            return patient;
         } else {
-            throw new RecordNotFoundException("No patient record exist for given id");
+            throw new RecordNotFoundException("No patient record exists for the given id");
         }
     }
+
+//    public Patient getPatientById(Long id) throws RecordNotFoundException {
+//        System.out.println("getPatientById");
+//        Optional<Patient> patient = repository.findById(id);
+//
+//        if (patient.isPresent()) {
+//            return patient.get();
+//        } else {
+//            throw new RecordNotFoundException("No patient record exist for given id");
+//        }
+//    }
 
     public Patient createOrUpdatePatient(Patient patient) {
         System.out.println("createOrUpdatePatient");
@@ -82,19 +96,37 @@ public class UserManageService {
             throw new RecordNotFoundException("No patient record exist for given id");
         }
     }
-    public Patient addVisitToPatient(Long patientId, Visit visit) throws RecordNotFoundException {
-        Optional<Patient> optionalPatient = repository.findById(patientId);
+//    public Patient addVisitToPatient(Long patientId, Visit visit) throws RecordNotFoundException {
+//        Optional<Patient> optionalPatient = repository.findById(patientId);
+//
+//        if (optionalPatient.isPresent()) {
+//            Patient patient = optionalPatient.get();
+//            visit.setPatient(patient);
+//            patient.getVisits().add(visit);
+//            repository.save(patient);
+//            return patient;
+//        } else {
+//            throw new RecordNotFoundException("No patient record exist for given id");
+//        }
+//    }
+@Transactional
+public Patient addVisitToPatient(Long patientId, Visit visit) throws RecordNotFoundException {
+    Optional<Patient> optionalPatient = repository.findById(patientId);
 
-        if (optionalPatient.isPresent()) {
-            Patient patient = optionalPatient.get();
-            visit.setPatient(patient);
-            patient.getVisits().add(visit);
-            repository.save(patient);
-            return patient;
-        } else {
-            throw new RecordNotFoundException("No patient record exist for given id");
-        }
+    if (optionalPatient.isPresent()) {
+        Patient patient = optionalPatient.get();
+
+        // Inicjalizacja kolekcji visits przed zakończeniem sesji Hibernate
+        Hibernate.initialize(patient.getVisits());
+
+        visit.setPatient(patient);
+        patient.getVisits().add(visit);
+        repository.save(patient);
+        return patient;
+    } else {
+        throw new RecordNotFoundException("No patient record exists for the given id");
     }
+}
 
     public Patient updateVisit(Long patientId, Visit visit) throws RecordNotFoundException {
         Optional<Patient> optionalPatient = repository.findById(patientId);
