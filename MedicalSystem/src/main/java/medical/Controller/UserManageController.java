@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import medical.Service.UserManageService;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import medical.exception.RecordNotFoundException;
@@ -123,7 +124,7 @@ public class UserManageController
     @PostMapping(path = "/visit/{patientId}")
     public String addVisit(
             @PathVariable("patientId") Long patientId,
-            @RequestParam(name = "visitDate", required = false) LocalDate visitDate
+            @RequestParam(name = "visitDate", required = false) LocalDateTime visitDate
     ) throws RecordNotFoundException {
         Visit visit = new Visit();
         visit.setVisitDate(visitDate);
@@ -131,11 +132,12 @@ public class UserManageController
         service.addVisitToPatient(patientId, visit);
 
 
-        return "list-patients";
+        return "redirect:/list-patients";
+
     }
 
     @PostMapping(path = "/updateVisit/{patientId}")
-    public String updateVisit(@PathVariable("patientId") Long patientId, @RequestParam("visitId") Long visitId, @RequestParam(name = "visitDate", required = false) LocalDate visitDate) throws RecordNotFoundException {
+    public String updateVisit(@PathVariable("patientId") Long patientId, @RequestParam("visitId") Long visitId, @RequestParam(name = "visitDate", required = false) LocalDateTime visitDate) throws RecordNotFoundException {
         Visit visit = new Visit();
         visit.setId(visitId);
         visit.setVisitDate(visitDate);
