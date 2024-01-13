@@ -147,7 +147,24 @@ public class UserManageController
         return "add-visit";
     }
 
+    @GetMapping("/editVisitForm/{id}")
+    public String showEditiVisitForm(@PathVariable Long id, Model model) throws RecordNotFoundException {
+        Patient patient = service.getPatientById(id);
+        model.addAttribute("patient", patient);
 
+        Visit visit = new Visit();
+        visit.setPatient(patient);
+        model.addAttribute("visit",visit);
+
+        return "redirect:/edit-visit";
+    }
+
+    @PostMapping("/editvisit/{id}")
+    public String editVisit(@PathVariable Long id, Visit editedVisit) throws RecordNotFoundException {
+        editedVisit.setId(id);
+        service.updateVisitFromId(editedVisit);
+        return "redirect:/list-patients";
+    }
 
 
 

@@ -3,6 +3,7 @@ package medical.Service;
 import medical.Model.Patient;
 import medical.Model.Visit;
 import medical.Repository.UserManageRepo;
+import medical.Repository.VisitManageRepo;
 import medical.exception.RecordNotFoundException;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ public class UserManageService {
 
     @Autowired
     UserManageRepo repository;
+    @Autowired
+    VisitManageRepo visitRepository;
 
     public List<Patient> getAllPatients() {
         System.out.println("getAllPatients");
@@ -39,6 +42,19 @@ public class UserManageService {
             return patient;
         } else {
             throw new RecordNotFoundException("No patient record exists for the given id");
+        }
+    }
+
+    public Visit getVisitById(Long id) throws RecordNotFoundException {
+        System.out.println("getVisitById");
+        Optional<Visit> visitOptional = visitRepository.findById(id);
+
+        if (visitOptional.isPresent()) {
+            Visit visit = visitOptional.get();
+            Hibernate.initialize(visit.getVisitDate());
+            return visit;
+        } else {
+            throw new RecordNotFoundException("No visits record exists for the given id");
         }
     }
 
@@ -148,6 +164,19 @@ public Patient addVisitToPatient(Long patientId, Visit visit) throws RecordNotFo
             return patient;
         } else {
             throw new RecordNotFoundException("No patient record exist for given id");
+        }
+    }
+
+    public Visit updateVisitFromId(Visit visit) throws RecordNotFoundException {
+        Optional<Visit> optionalVisit = visitRepository.findById(visit.getId());
+
+        if (optionalVisit.isPresent()) {
+            Visit existingVisit = optionalVisit.get();
+            existingVisit.setVisitDate(visit.getVisitDate());
+            // ... inne pola wizyty
+            return visitRepository.save(existingVisit);
+        } else {
+            throw new RecordNotFoundException("No visit record exists for the given id");
         }
     }
 

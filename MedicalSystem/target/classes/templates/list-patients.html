@@ -87,9 +87,12 @@
                                 <td th:text="${patient.age}"></td>
                                 <td th:text="${patient.description}"></td>
                                 <td>
-                                    <!-- Display patient's visits -->
                                     <ul th:if="${patient.visits != null}" th:each="visit : ${patient.visits}">
-                                        <li th:text="${visit.visitDate}"></li>
+                                        <li>
+                                            <a th:href="@{'/editVisitForm/' + ${visit.getId()}}">
+                                                <span th:text="${visit.visitDate}"></span>
+                                            </a>
+                                        </li>
                                     </ul>
                                     <p th:if="${patient.visits == null}">No visits</p>
                                 </td>
