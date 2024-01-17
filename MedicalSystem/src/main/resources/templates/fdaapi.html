@@ -9,7 +9,20 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 </head>
+<style>
+    .search{
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        margin-top: 5vh;
+        font-family: 'Playfair Display', serif;
+    }
+
+</style>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
@@ -44,9 +57,9 @@
 </nav>
 <main>
     <fieldset>
-        <form>
-            <label>Opis
-                <input type="text" id="searchInput" name="description" />
+        <form class="search">
+            <label>Nazwa
+                <input type="text" id="searchInput" class="sField" name="description" />
             </label>
             <button type="button" onclick="searchOpenFDA()">Wyszukaj!</button>
 
@@ -60,21 +73,16 @@
 
 <script>
     function searchOpenFDA() {
-        // Pobierz frazę wyszukiwania
         var searchQuery = document.getElementById('searchInput').value;
-
-        // Pobierz dane z OpenFDA za pomocą fetch
         fetch('https://api.fda.gov/drug/event.json?search=' + searchQuery)
             .then(response => response.json())
             .then(data => {
-                // Wyświetl zrozumiałe informacje na stronie
                 displayResults(data);
             })
             .catch(error => console.error('Błąd pobierania danych z OpenFDA:', error));
     }
 
     function displayResults(data) {
-        // Przygotuj zrozumiałe informacje
         var resultsHtml = "<h2>Wyniki wyszukiwania:</h2>";
         console.log(data);
         if (data.results && data.results.length > 0) {
@@ -86,8 +94,6 @@
                 resultsHtml += "<strong>Data Otrzymania:</strong> " + result.receivedate + "<br>";
                 // resultsHtml += "<strong>Waga Pacjenta:</strong> " + result.patient.patientonsetage + " " + result.patient.patientonsetageunit + "<br>";
                 // resultsHtml += "<strong>Płeć Pacjenta:</strong> " + (result.patient.patientsex === '1' ? 'Mężczyzna' : 'Kobieta') + "<br>";
-
-                // Include other properties
                 resultsHtml += "<strong>Kod firmy:</strong> " + result.companynumb + "<br>";
                 resultsHtml += "<strong>Duplikat:</strong> " + result.duplicate + "<br>";
                 resultsHtml += "<strong>Spełnione kryteria:</strong> " + result.fulfillexpeditecriteria + "<br>";
@@ -95,8 +101,6 @@
                 resultsHtml += "<strong>Kwalifikacja:</strong> " + result.qualification + "<br>";
                 resultsHtml += "<strong>Kraj raportu:</strong> " + result.reportercountry + "<br>";
                 resultsHtml += "<strong>Źródło:</strong> " + result.sender.senderorganization + "<br>"+" "+result.sender.sendertype;
-
-                // Include other nested properties
 
                 resultsHtml += "</li>";
             });
