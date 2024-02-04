@@ -4,7 +4,11 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 @Table(name="PATIENTS")
@@ -27,7 +31,52 @@ public class Patient {
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Visit> visits;
 
+//Additional Medical info
+@Column(name="weight")
+    private Double weight;
+    @Enumerated(EnumType.STRING)
+    @Column(name="plec")
+    private Plec plec;
 
+    @Column(name="ilnessHistory")
+    private String ilnessHistory;
+
+    @Column(name="contraindications")
+    private String contraindications;
+
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        weight = weight;
+    }
+
+    public Plec getPlec() {
+        return plec;
+    }
+
+    public void setPlec(Plec plec) {
+        this.plec = plec;
+    }
+
+    public String getIlnessHistory() {
+        return ilnessHistory;
+    }
+
+    public void setIlnessHistory(String ilnessHistory) {
+        this.ilnessHistory = ilnessHistory;
+    }
+
+    public String getContraindications() {
+        return contraindications;
+    }
+
+    public void setContraindications(String contraindications) {
+        this.contraindications = contraindications;
+    }
+//
     public List<Visit> getVisits() {
         return visits;
     }

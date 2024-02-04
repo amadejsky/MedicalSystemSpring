@@ -158,6 +158,21 @@ public class UserManageController
 
         return "redirect:/edit-visit";
     }
+    @GetMapping("/additionalMedicalInfoForm/{id}")
+    public String showAdditionalInfoForm(@PathVariable Long id, Model model) throws RecordNotFoundException{
+        Patient patient = service.getPatientById(id);
+        model.addAttribute("patient", patient);
+        model.addAttribute("patientId", id);
+
+        return "redirect:/additionalMedicalInfo";
+    }
+
+    @PostMapping("/submitMedicalInfo/{patientId}")
+    public String submitMedicalInfo(@PathVariable ("patientId") Long id) throws RecordNotFoundException {
+        Patient patient = service.getPatientById(id);
+        service.updatePatientMedicalInfo(patient);
+        return "redirect:/list-patients";
+    }
 
     @PostMapping("/editvisit/{id}")
     public String editVisit(@PathVariable Long id, Visit editedVisit) throws RecordNotFoundException {

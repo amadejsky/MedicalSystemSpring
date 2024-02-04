@@ -33,13 +33,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/homepage">Home</a>
+                    <a class="nav-link active" aria-current="page" href="homepage">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="list-patients">Patients</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">News</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -92,8 +92,7 @@
                 resultsHtml += "<strong>ID Raportu Bezpieczeństwa:</strong> " + result.safetyreportid + "<br>";
                 resultsHtml += "<strong>Kraj:</strong> " + result.primarysourcecountry + "<br>";
                 resultsHtml += "<strong>Data Otrzymania:</strong> " + result.receivedate + "<br>";
-                // resultsHtml += "<strong>Waga Pacjenta:</strong> " + result.patient.patientonsetage + " " + result.patient.patientonsetageunit + "<br>";
-                // resultsHtml += "<strong>Płeć Pacjenta:</strong> " + (result.patient.patientsex === '1' ? 'Mężczyzna' : 'Kobieta') + "<br>";
+                resultsHtml += "<strong>Średnia waga przyjęta w dawkowaniu:</strong> " + result.patient.patientonsetage + " " + result.patient.patientonsetageunit + "<br>";
                 resultsHtml += "<strong>Kod firmy:</strong> " + result.companynumb + "<br>";
                 resultsHtml += "<strong>Duplikat:</strong> " + result.duplicate + "<br>";
                 resultsHtml += "<strong>Spełnione kryteria:</strong> " + result.fulfillexpeditecriteria + "<br>";

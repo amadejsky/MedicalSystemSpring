@@ -17,7 +17,28 @@
     <style>
         td{
             font-family: 'Playfair Display', serif;
+            align-items: center;
+            min-width: fit-content;
         }
+        .btn-sm{
+            width: 4rem;
+            height: 2.3rem;
+            text-align: center;
+
+        }
+        @media (min-width: 1200px) {
+            .add{
+                width: 120px;
+            }
+        }
+        .btn-block{
+            width: 100%;
+        }
+        table {
+            width: 100%;
+        }
+
+
     </style>
 </head>
 
@@ -37,7 +58,7 @@
                     <a class="nav-link" href="list-patients">Patients</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">News</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,10 +83,7 @@
     
         <!--/*@thymesVar id="patient" type="medical.Model.Patient"*/-->
         <div th:switch="${patients}" class="container my-5">
-            <p class="my-5">
-                <a href="/edit" class="btn btn-primary">
-                <i class="fas fa-user-plus ml-2"> Add Patient </i></a>
-            </p>
+
 <!--            <p class="my-5">-->
 <!--                <a href="/addPatient" class="btn btn-primary">-->
 <!--                    <i class="fas fa-user-plus ml-2"> Add Patient </i></a>-->
@@ -105,14 +123,13 @@
                                     <p th:if="${patient.visits == null}">No visits</p>
                                 </td>
                                 <td>
-                                    <!-- Add a button for adding visits -->
-                                    <a th:href="@{/addVisit/{id}(id=${patient.id})}" class="btn btn-primary">
+                                    <a th:href="@{/addVisit/{id}(id=${patient.id})}" class="btn btn-primary add">
                                         <i class="fas fa-calendar-plus ml-2"></i> Add Visit
                                     </a>
                                 </td>
                                 <td>
-                                    <a th:href="@{/delete/{id}(id=${patient.id})}" class="btn btn-primary">
-                                        <i class="fas fa-user-times ml-2"></i>
+                                    <a th:href="@{/delete/{id}(id=${patient.id})}" class="btn btn-outline-danger btn-sm">
+                                        <i class="fas fa-user-times ml-2">X</i>
                                     </a>
                                 </td>
 
@@ -122,6 +139,10 @@
                 </div>
 
             </div>
+            <p class="my-5">
+                <a href="/edit" class="btn btn-primary btn-lg btn-block">
+                    <i class="fas fa-user-plus ml-2"> Add Patient </i></a>
+            </p>
         </div>
     </div>
     </div>

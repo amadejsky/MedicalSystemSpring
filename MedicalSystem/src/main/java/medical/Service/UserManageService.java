@@ -87,6 +87,34 @@ public class UserManageService {
                 existingPatient.setAge(patient.getAge());
                 existingPatient.setDescription(patient.getDescription());
 
+
+                existingPatient = repository.save(existingPatient);
+
+                return existingPatient;
+            } else {
+                patient = repository.save(patient);
+                return patient;
+            }
+        }
+    }
+
+    public Patient updatePatientMedicalInfo(Patient patient) {
+        System.out.println("Update Patient's additional medical journal");
+        // Create new entry
+        if (patient.getId() == null) {
+            patient = repository.save(patient);
+            System.out.println("Patient have null id");
+            return patient;
+        } else {
+            Optional<Patient> patientOptional = repository.findById(patient.getId());
+
+            if (patientOptional.isPresent()) {
+                Patient existingPatient = patientOptional.get();
+
+                existingPatient.setPlec(patient.getPlec());
+                existingPatient.setIlnessHistory(patient.getIlnessHistory());
+                existingPatient.setContraindications(patient.getContraindications());
+
                 existingPatient = repository.save(existingPatient);
 
                 return existingPatient;
