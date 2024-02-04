@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="272a3d2e-fa87-46d6-8ce4-693aef3366f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/ms-db.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-db.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/ms-db.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/medical/Controller/UserManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Controller/UserManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/medical/Model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Model/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/medical/Service/UserManageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Service/UserManageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-edit-patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-edit-patient.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-visit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/edit-visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-visit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fdaapi.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fdaapi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/list-patients.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/list-patients.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,6 +144,7 @@
       <workItem from="1705679227385" duration="80000" />
       <workItem from="1706976445528" duration="125000" />
       <workItem from="1707042263855" duration="7886000" />
+      <workItem from="1707058267490" duration="373000" />
     </task>
     <servers />
   </component>
