@@ -20,6 +20,7 @@ import medical.exception.RecordNotFoundException;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -158,27 +159,39 @@ public class UserManageController
 
         return "redirect:/edit-visit";
     }
+    @PostMapping("/editvisit/{id}")
+    public String editVisit(@PathVariable Long id, Visit editedVisit) throws RecordNotFoundException {
+        editedVisit.setId(id);
+        service.updateVisitFromId(editedVisit);
+        return "redirect:/list-patients";
+    }
     @GetMapping("/additionalMedicalInfoForm/{id}")
     public String showAdditionalInfoForm(@PathVariable Long id, Model model) throws RecordNotFoundException{
         Patient patient = service.getPatientById(id);
         model.addAttribute("patient", patient);
         model.addAttribute("patientId", id);
 
-        return "redirect:/additionalMedicalInfo";
+        return "additionalMedicalInfo";
     }
 
     @PostMapping("/submitMedicalInfo/{patientId}")
-    public String submitMedicalInfo(@PathVariable ("patientId") Long id) throws RecordNotFoundException {
-        Patient patient = service.getPatientById(id);
-        service.updatePatientMedicalInfo(patient);
+    public String submitMedicalInfo(@PathVariable ("patientId") Long id,@ModelAttribute("patient") Patient patient, RedirectAttributes redirectAttributes)
+            throws RecordNotFoundException {
+        service.updatePatientMedicalInfo(patient, id);
         return "redirect:/list-patients";
     }
 
-    @PostMapping("/editvisit/{id}")
-    public String editVisit(@PathVariable Long id, Visit editedVisit) throws RecordNotFoundException {
-        editedVisit.setId(id);
-        service.updateVisitFromId(editedVisit);
-        return "redirect:/list-patients";
+    @GetMapping("/showInfo/{id}")
+    public String showInfo(@PathVariable Long id, Model model) throws RecordNotFoundException{
+        Patient patient = service.getPatientById(id);
+        model.addAttribute("patient", patient);
+        model.addAttribute("patientId", id);
+
+        List<Patient> list = service.getAllPatients();
+
+        model.addAttribute("patients", list);
+
+        return "patientInfo";
     }
 
 

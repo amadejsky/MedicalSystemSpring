@@ -22,13 +22,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="homepage">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/homepage">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="list-patients">Patients</a>
+                    <a class="nav-link" href="/list-patients">Patients</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">News</a>
+                    <a class="nav-link" href="/#">News</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,18 +46,49 @@
 </nav>
 <div class="container my-5" style="padding-top: 30px;">
 
-    <h3> Add Visit</h3>
+    <h3> Fill in additional medical info about patient</h3>
+
 
     <div class="card">
         <div class="card-body">
             <div class="col-md-10">
                 <!--/*@thymesVar id="patient" type="medical.Model.Patient"*/-->
-                <form th:action="@{'/visit/' + ${patient.id}}" method="post" th:object="${visit}">
-                    <input type="hidden" th:field="*{patient.id}" />
+                <form th:action="@{'/submitMedicalInfo/' + ${patient.id}}" th:object="${patient}" method="post">
+
+                    <div class="row">
+
+                        <div class="form-group col-md-8">
+                            <label for="Weight" class="col-form-label">Weight</label>
+                            <input type="Number" th:field="*{weight}" class="form-control"
+                                   id="weight" placeholder="weight" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="sex" class="col-form-label">Sex</label>
+                            <select th:field="*{plec}" class="form-control" id="sex">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="ilnessHistory" class="col-form-label">Ilness history</label>
+                            <input type="text" th:field="*{ilnessHistory}" class="form-control"
+                                   id="ilnessHistory" placeholder="ilnessHistory" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="contraindications" class="col-form-label">Contraindications</label>
+                            <input type="text" th:field="*{contraindications}" class="form-control"
+                                   id="contraindications" placeholder="contraindications" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary" value=" Submit ">
+                        </div>
 
 
+
+                    </div>
                 </form>
-
             </div>
         </div>
     </div>

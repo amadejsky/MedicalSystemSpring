@@ -45,7 +45,7 @@ public class Patient {
     private String contraindications;
 
 
-    public double getWeight() {
+    public Double getWeight() {
         return weight;
     }
 

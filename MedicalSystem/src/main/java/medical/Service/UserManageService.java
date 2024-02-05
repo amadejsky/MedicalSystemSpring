@@ -38,6 +38,8 @@ public class UserManageService {
 
         if (patientOptional.isPresent()) {
             Patient patient = patientOptional.get();
+
+
             Hibernate.initialize(patient.getVisits());
             return patient;
         } else {
@@ -97,33 +99,45 @@ public class UserManageService {
             }
         }
     }
+    public Patient updatePatientMedicalInfo(Patient patientDetails, Long id) throws RecordNotFoundException {
+        Patient patient = repository.findById(id).orElseThrow(() -> new RecordNotFoundException("Not found patient with given ID: " + id));
 
-    public Patient updatePatientMedicalInfo(Patient patient) {
-        System.out.println("Update Patient's additional medical journal");
-        // Create new entry
-        if (patient.getId() == null) {
-            patient = repository.save(patient);
-            System.out.println("Patient have null id");
-            return patient;
-        } else {
-            Optional<Patient> patientOptional = repository.findById(patient.getId());
+        patient.setPlec(patientDetails.getPlec());
+        patient.setIlnessHistory(patientDetails.getIlnessHistory());
+        patient.setContraindications(patientDetails.getContraindications());
 
-            if (patientOptional.isPresent()) {
-                Patient existingPatient = patientOptional.get();
 
-                existingPatient.setPlec(patient.getPlec());
-                existingPatient.setIlnessHistory(patient.getIlnessHistory());
-                existingPatient.setContraindications(patient.getContraindications());
-
-                existingPatient = repository.save(existingPatient);
-
-                return existingPatient;
-            } else {
-                patient = repository.save(patient);
-                return patient;
-            }
-        }
+        return repository.save(patient);
     }
+
+
+//    public Patient updatePatientMedicalInfo(Patient patient) {
+//        System.out.println("Update Patient's additional medical journal");
+//        // Create new entry
+//        if (patient.getId() == null) {
+//            patient = repository.save(patient);
+//            System.out.println("Patient have null id");
+//            return patient;
+//        } else {
+//            Optional<Patient> patientOptional = repository.findById(patient.getId());
+//
+//            if (patientOptional.isPresent()) {
+//                Patient existingPatient = patientOptional.get();
+//
+//                existingPatient.setPlec(patient.getPlec());
+//                existingPatient.setIlnessHistory(patient.getIlnessHistory());
+//                existingPatient.setContraindications(patient.getContraindications());
+//
+//                existingPatient = repository.save(existingPatient);
+//
+//                return existingPatient;
+//
+//            } else {
+//                patient = repository.save(patient);
+//                return patient;
+//            }
+//        }
+//    }
 
     public Patient addPatient(Patient patient){
         return repository.save(patient);
