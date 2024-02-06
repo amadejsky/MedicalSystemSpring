@@ -102,12 +102,15 @@ public class UserManageService {
     public Patient updatePatientMedicalInfo(Patient patientDetails, Long id) throws RecordNotFoundException {
         Patient patient = repository.findById(id).orElseThrow(() -> new RecordNotFoundException("Not found patient with given ID: " + id));
 
+        patient.setWeight(patientDetails.getWeight());
         patient.setPlec(patientDetails.getPlec());
         patient.setIlnessHistory(patientDetails.getIlnessHistory());
         patient.setContraindications(patientDetails.getContraindications());
 
+        System.out.println("patient weight from service: "+patient.getWeight());
 
-        return repository.save(patient);
+        repository.save(patient);
+        return patient;
     }
 
 

@@ -177,6 +177,12 @@ public class UserManageController
     @PostMapping("/submitMedicalInfo/{patientId}")
     public String submitMedicalInfo(@PathVariable ("patientId") Long id,@ModelAttribute("patient") Patient patient, RedirectAttributes redirectAttributes)
             throws RecordNotFoundException {
+        System.out.println("Received patient data:");
+        System.out.println("Weight: " + patient.getWeight());
+        System.out.println("Plec: " + patient.getPlec());
+        System.out.println("Ilness History: " + patient.getIlnessHistory());
+        System.out.println("Contraindications: " + patient.getContraindications());
+        patient.setWeight(patient.getWeight());
         service.updatePatientMedicalInfo(patient, id);
         return "redirect:/list-patients";
     }

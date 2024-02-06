@@ -31,9 +31,9 @@ public class Patient {
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Visit> visits;
 
-//Additional Medical info
-@Column(name="weight")
+    @Column(name = "weight", columnDefinition = "DOUBLE")
     private Double weight;
+
     @Enumerated(EnumType.STRING)
     @Column(name="plec")
     private Plec plec;
@@ -44,13 +44,12 @@ public class Patient {
     @Column(name="contraindications")
     private String contraindications;
 
-
     public Double getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
-        weight = weight;
+    public void setWeight(Double weight) {
+        this.weight = weight;
     }
 
     public Plec getPlec() {
