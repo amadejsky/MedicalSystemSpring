@@ -225,5 +225,14 @@ public Patient addVisitToPatient(Long patientId, Visit visit) throws RecordNotFo
         }
     }
 
+    public void deleteVisitById(Long id) throws RecordNotFoundException{
+        Optional<Visit> visit = visitRepository.findById(id);
+        if(visit.isPresent()){
+            visitRepository.deleteById(id);
+        }else
+            System.out.println("Visit is not present!");
+
+    }
+
 
 }

@@ -14,34 +14,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-    <style>
-        td{
-            font-family: 'Playfair Display', serif;
-            align-items: center;
-            min-width: fit-content;
-        }
-        .btn-sm{
-            width: 4rem;
-            height: 2.3rem;
-            text-align: center;
-
-        }
-        @media (min-width: 1200px) {
-            .add{
-                width: 120px;
-            }
-        }
-        .btn-block{
-            width: 100%;
-        }
-        table {
-            width: 100%;
-        }
-
-
-    </style>
 </head>
+<style>
+    td{
+        font-family: 'Playfair Display', serif;
+        align-items: center;
+        min-width: fit-content;
+    }
+    .btn-sm{
+        width: 4rem;
+        height: 2.3rem;
+        text-align: center;
 
+    }
+    @media (min-width: 1200px) {
+        .add{
+            width: 120px;
+        }
+    }
+    .btn-block{
+        width: 100%;
+    }
+    table {
+        width: 100%;
+    }
+    .banner{
+        width: 100%;
+        height: 420px;
+        background-image: url("/lab2.jpg");
+        background-size: cover;
+        background-position:center;
+    }
+    .my-5{
+        padding-top: 0;
+    }
+    .card-body,card{
+        padding-top: 0;
+    }
+
+</style>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
@@ -74,7 +85,7 @@
         </div>
     </div>
 </nav>
-<img src="/lab.jpg" class="img-fluid" style="width: 100%; height: 600px;">
+<div class="banner"></div>
 
 
 

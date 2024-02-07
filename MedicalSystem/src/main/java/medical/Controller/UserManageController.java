@@ -1,18 +1,13 @@
 package medical.Controller;
 
-import com.couchbase.client.core.error.ServerOutOfMemoryException;
 import medical.Model.Patient;
-import jakarta.validation.Valid;
 import medical.Model.Visit;
 import medical.Service.UserManageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
-import medical.Service.UserManageService;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -63,13 +58,13 @@ public class UserManageController
     }
 
     @RequestMapping(path = "/delete/{id}")
-    public String deleteEmployeeById(Model model, @PathVariable("id") Long id)
+    public String deletePatientById(Model model, @PathVariable("id") Long id)
             throws RecordNotFoundException
     {
 
         System.out.println("deletePatientById" + id);
 
-        service.deletePatientById(id);
+        service.deleteVisitById(id);
         return "redirect:/";
     }
 
@@ -150,19 +145,23 @@ public class UserManageController
 
     @GetMapping("/editVisitForm/{id}")
     public String showEditiVisitForm(@PathVariable Long id, Model model) throws RecordNotFoundException {
-        Patient patient = service.getPatientById(id);
+        Visit visit = service.getVisitById(id);
+        model.addAttribute("visit", visit);
+        Patient patient = visit.getPatient();
         model.addAttribute("patient", patient);
-
-        Visit visit = new Visit();
-        visit.setPatient(patient);
-        model.addAttribute("visit",visit);
-
-        return "redirect:/edit-visit";
+        service.updateVisit(patient.getId(),visit);
+        return "edit-visit";
     }
     @PostMapping("/editvisit/{id}")
     public String editVisit(@PathVariable Long id, Visit editedVisit) throws RecordNotFoundException {
         editedVisit.setId(id);
         service.updateVisitFromId(editedVisit);
+        return "redirect:/list-patients";
+    }
+    @PostMapping("/deletevisit/{id}")
+    public String deleteVisit(@PathVariable Long id, Visit editedVisit) throws RecordNotFoundException {
+        editedVisit.setId(id);
+        service.deleteVisitById(id);
         return "redirect:/list-patients";
     }
     @GetMapping("/additionalMedicalInfoForm/{id}")
@@ -175,14 +174,17 @@ public class UserManageController
     }
 
     @PostMapping("/submitMedicalInfo/{patientId}")
-    public String submitMedicalInfo(@PathVariable ("patientId") Long id,@ModelAttribute("patient") Patient patient, RedirectAttributes redirectAttributes)
-            throws RecordNotFoundException {
-        System.out.println("Received patient data:");
-        System.out.println("Weight: " + patient.getWeight());
-        System.out.println("Plec: " + patient.getPlec());
-        System.out.println("Ilness History: " + patient.getIlnessHistory());
-        System.out.println("Contraindications: " + patient.getContraindications());
-        patient.setWeight(patient.getWeight());
+    public String submitMedicalInfo(@PathVariable ("patientId") Long id,@ModelAttribute("patient") Patient patient,
+    @RequestParam("ilnessHistoryDate") String ilnessHistoryDate,
+    RedirectAttributes redirectAttributes) throws RecordNotFoundException {
+//        System.out.println("Received patient data:");
+//        System.out.println("Weight: " + patient.getWeight());
+//        System.out.println("Plec: " + patient.getPlec());
+//        System.out.println("Ilness History: " + patient.getIlnessHistory());
+//        System.out.println("Contraindications: " + patient.getContraindications());
+//        patient.setWeight(patient.getWeight());
+        String ilnessHistoryWithDate = patient.getIlnessHistory() + " - Approximated Date: " + ilnessHistoryDate;
+        patient.setIlnessHistory(ilnessHistoryWithDate);
         service.updatePatientMedicalInfo(patient, id);
         return "redirect:/list-patients";
     }
