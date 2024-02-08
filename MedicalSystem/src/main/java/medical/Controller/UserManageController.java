@@ -25,6 +25,9 @@ public class UserManageController
     @Autowired
     UserManageService service;
 
+
+
+
     @RequestMapping
     public String getAllPatients(Model model)
     {
@@ -64,7 +67,7 @@ public class UserManageController
 
         System.out.println("deletePatientById" + id);
 
-        service.deleteVisitById(id);
+        service.deletePatientById(id);
         return "redirect:/";
     }
 
@@ -160,8 +163,11 @@ public class UserManageController
     }
     @PostMapping("/deletevisit/{id}")
     public String deleteVisit(@PathVariable Long id, Visit editedVisit) throws RecordNotFoundException {
-        editedVisit.setId(id);
+      //  editedVisit.setId(id);
+       // Patient patient = editedVisit.getPatient();
         service.deleteVisitById(id);
+       // System.out.println("delete visit by id after service delete"+editedVisit.getId());
+       // System.out.println("delete visit by id after service delete"+id);
         return "redirect:/list-patients";
     }
     @GetMapping("/additionalMedicalInfoForm/{id}")

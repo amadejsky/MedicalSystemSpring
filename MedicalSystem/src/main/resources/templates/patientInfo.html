@@ -14,83 +14,97 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-    <style>
-        td{
-            font-family: 'Playfair Display', serif;
-            align-items: center;
-            min-width: fit-content;
-        }
-        .btn-sm{
-            width: 4rem;
-            height: 1.5rem;
-            text-align: center;
-
-        }
-        @media (min-width: 1200px) {
-            .add{
-                width: 120px;
-            }
-        }
-        table {
-            width: 100%;
-        }
-        .label{
-            display: grid;
-            grid-auto-flow: row;
-            width: 10%;
-            min-width: fit-content;
-            padding-right: 0px;
-            float: left;
-            height: 100%;
-
-        }
-        .data{
-            display: grid;
-            grid-auto-flow: row;
-            min-width: fit-content;
-            width: 60%;
-            align-content: start;
-            padding-left: 2px;
-            float:right;
-            height: 100%;
-
-        }
-        .container{
-            width: 100vw;
-            height: 80vh;
-
-        }
-        .btn-primary{
-            height: 1.5rem;
-            font-size: 0.8rem;
-            text-align: center;
-        }
-        .btn-block{
-            width: 86%;
-            height: 2.6rem;
-            font-size: 1.5rem;
-        }
-        th:nth-child(even){
-            background-color: #f9f9f9;
-
-        }
-        th:nth-child(odd){
-            background-color: #ffffff;
-
-        }
-        td:nth-child(even){
-            background-color: #f9f9f9;
-
-        }
-        td:nth-child(odd){
-            background-color: #ffffff;
-
-        }
-
-
-    </style>
 </head>
+<style>
+    td{
+        font-family: 'Playfair Display', serif;
+        align-items: center;
+        min-width: fit-content;
+    }
+    .btn-sm{
+        width: 4rem;
+        height: 1.5rem;
+        text-align: center;
 
+    }
+    @media (min-width: 1200px) {
+        .add{
+            width: 120px;
+        }
+    }
+    table {
+        width: 100%;
+    }
+    .label{
+        display: grid;
+        grid-auto-flow: row;
+        width: 10%;
+        min-width: fit-content;
+        padding-right: 0px;
+        float: left;
+        height: 100%;
+
+    }
+    .data{
+        display: grid;
+        grid-auto-flow: row;
+        min-width: fit-content;
+        width: 60%;
+        align-content: start;
+        float:right;
+        height: 100%;
+
+    }
+    .container{
+        width: 100vw;
+        height: 80vh;
+
+    }
+    .btn-primary,btn-outline-danger{
+        height: 1.7rem;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .btn-block{
+        width: 86%;
+        height: 2.6rem;
+        font-size: 1.5rem;
+    }
+    th:nth-child(even){
+        background-color: #f9f9f9;
+
+    }
+    th:nth-child(odd){
+        background-color: #ffffff;
+
+    }
+    td:nth-child(even){
+        background-color: #f9f9f9;
+
+    }
+    td:nth-child(odd){
+        background-color: #ffffff;
+
+    }
+    .banner{
+        width: 100%;
+        height: 300px;
+        background-image: url("/visit.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+    .table th, .table td {
+        padding: 0.5rem;
+    }
+
+    .label, .data {
+        margin-right: 0;
+        padding-right: 0;
+    }
+    .data{
+        margin-left: -200px;
+    }
+</style>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
@@ -123,26 +137,14 @@
         </div>
     </div>
 </nav>
-<img src="/lab.jpg" class="img-fluid" style="width: 100%; height: 600px;">
-
-
-
+<div class="banner"></div>
 <div class="card" style="padding-top: 50px;">
     <div class="card-body">
 
         <!--/*@thymesVar id="patient" type="medical.Model.Patient"*/-->
         <div th:switch="${patients}" class="container my-5">
-
-            <!--            <p class="my-5">-->
-            <!--                <a href="/addPatient" class="btn btn-primary">-->
-            <!--                    <i class="fas fa-user-plus ml-2"> Add Patient </i></a>-->
-            <!--            </p>-->
-
-
             <div class="col-md-10">
                 <div class="container">
-<!--                <h2 th:case="null">No record found !!</h2>-->
-<!--                <div th:case="*">-->
                     <table class="table table-striped table-responsive-md">
                         <tr class="label">
                             <th>Name</th>
@@ -157,10 +159,8 @@
                             <th>Fill in additional patient medical information</th>
                             <th>Delete Patient</th>
                         </tr>
-
                         <!--/*@thymesVar id="patient" type="medical.Model.Patient"*/-->
                         <tr class = "data">
-
                             <td th:text="${patient.name}"></td>
                             <td th:text="${patient.surname}"></td>
                             <td th:text="${patient.age}"></td>
@@ -191,7 +191,7 @@
                             </td>
                             <td>
                                 <a th:href="@{/delete/{id}(id=${patient.id})}" class="btn btn-outline-danger btn-sm">
-                                    <i class="fas fa-user-times ml-2">X</i>
+                                    <i class="fas fa-user-times ml-2">Delete</i>
                                 </a>
                             </td>
 

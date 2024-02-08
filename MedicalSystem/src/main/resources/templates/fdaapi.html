@@ -42,7 +42,7 @@
 
     #openFDAResponse {
         padding: 20px;
-        background-color: transparent;
+        background-color: #dcdde1;
     }
 
     #openFDAResponse h2 {
@@ -149,8 +149,11 @@
         }
 
         responseBox.innerHTML = resultsHtml;
-        responseBox.style.border="1px solid white";
-        responseBox.style.color="white";
+        responseBox.style.border="1px solid #dcdde1";
+        responseBox.style.boxShadow = "10px 10px 36px 10px rgba(0,0,0,0.75)";
+        responseBox.style.webkitBoxShadow = "10px 10px 36px 10px rgba(0,0,0,0.75)";
+        responseBox.style.mozBoxShadow = "10px 10px 36px 10px rgba(0,0,0,0.75)";
+
     }
 
 </script>

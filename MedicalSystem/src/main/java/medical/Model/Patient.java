@@ -28,7 +28,7 @@ public class Patient {
     @Column(name="description")
     @NotBlank(message = "Opis zdrowotny pacjenta jest wymagany")
     private String description;
-    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Visit> visits;
 
     @Column(name = "weight", columnDefinition = "DOUBLE")

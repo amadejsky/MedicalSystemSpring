@@ -9,11 +9,13 @@
       <change beforePath="$PROJECT_DIR$/ms-db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/ms-db.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-db.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/ms-db.trace.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/medical/Controller/UserManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Controller/UserManageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/medical/Model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Model/Patient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/medical/Service/UserManageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Service/UserManageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-visit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/additionalMedicalInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/additionalMedicalInfo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/edit-visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-visit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fdaapi.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fdaapi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/list-patients.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/list-patients.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/patientInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/patientInfo.html" afterDir="false" />
     </list>
@@ -159,6 +161,8 @@
       <workItem from="1707224837931" duration="237000" />
       <workItem from="1707297619263" duration="6938000" />
       <workItem from="1707322416625" duration="4758000" />
+      <workItem from="1707327439471" duration="384000" />
+      <workItem from="1707395137191" duration="4561000" />
     </task>
     <servers />
   </component>

@@ -196,11 +196,10 @@ public Patient addVisitToPatient(Long patientId, Visit visit) throws RecordNotFo
             Patient patient = optionalPatient.get();
             List<Visit> visits = patient.getVisits();
 
-            // Znajdź wizytę i zaktualizuj jej dane
             for (Visit existingVisit : visits) {
                 if (existingVisit.getId().equals(visit.getId())) {
                     existingVisit.setVisitDate(visit.getVisitDate());
-                    // ... inne pola wizyty
+
                     break;
                 }
             }
@@ -225,14 +224,17 @@ public Patient addVisitToPatient(Long patientId, Visit visit) throws RecordNotFo
         }
     }
 
-    public void deleteVisitById(Long id) throws RecordNotFoundException{
+    @Transactional
+    public void deleteVisitById(Long id) throws RecordNotFoundException {
         Optional<Visit> visit = visitRepository.findById(id);
-        if(visit.isPresent()){
+        if (visit.isPresent()) {
+            Patient patient = visit.get().getPatient();
+            patient.getVisits().remove(visit.get());
             visitRepository.deleteById(id);
-        }else
-            System.out.println("Visit is not present!");
 
+        } else {
+            throw new RecordNotFoundException("No visit record exist with given id");
+        }
     }
-
 
 }
