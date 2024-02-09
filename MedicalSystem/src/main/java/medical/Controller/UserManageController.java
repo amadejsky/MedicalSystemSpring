@@ -29,15 +29,15 @@ public class UserManageController
 
 
     @RequestMapping
-    public String getAllPatients(Model model)
+    public String homepageStart(Model model)
     {
-        System.out.println("getAllPatients");
+//        System.out.println("getAllPatients");
+//
+//        List<Patient> list = service.getAllPatients();
+//
+//        model.addAttribute("patients", list);
 
-        List<Patient> list = service.getAllPatients();
-
-        model.addAttribute("patients", list);
-
-        return "list-patients";
+        return "homepage";
     }
 
 
@@ -75,13 +75,13 @@ public class UserManageController
     public String createOrUpdatePatient(Patient patient) {
         System.out.println("Create or update patient");
         service.createOrUpdatePatient(patient);
-        return "redirect:/";
+        return "redirect:/list-patients";
     }
 
     @RequestMapping(path="/addPatientToDataBase", method=RequestMethod.POST)
     public String addPatientToDataBase(Patient patient){
         service.addPatient(patient);
-        return "redirect:/";
+        return "redirect:/list-patients";
     }
 
     @RequestMapping(path = "/addPatient")
