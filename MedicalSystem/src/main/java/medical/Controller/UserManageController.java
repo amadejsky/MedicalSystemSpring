@@ -108,6 +108,12 @@ public class UserManageController
 
         return "fdaapi";
     }
+
+    @RequestMapping(path="/news")
+    public String news(Model fda){
+
+        return "news";
+    }
     @GetMapping("/addVisit/{id}")
     public String showAddVisitForm(@PathVariable Long id, Model model) throws RecordNotFoundException {
         Patient patient = service.getPatientById(id);
@@ -182,6 +188,7 @@ public class UserManageController
     @PostMapping("/submitMedicalInfo/{patientId}")
     public String submitMedicalInfo(@PathVariable ("patientId") Long id,@ModelAttribute("patient") Patient patient,
     @RequestParam("ilnessHistoryDate") String ilnessHistoryDate,
+    @RequestParam("vaccinationDate") String vaccinationDate,
     RedirectAttributes redirectAttributes) throws RecordNotFoundException {
 //        System.out.println("Received patient data:");
 //        System.out.println("Weight: " + patient.getWeight());
@@ -189,8 +196,10 @@ public class UserManageController
 //        System.out.println("Ilness History: " + patient.getIlnessHistory());
 //        System.out.println("Contraindications: " + patient.getContraindications());
 //        patient.setWeight(patient.getWeight());
-        String ilnessHistoryWithDate = patient.getIlnessHistory() + " - Approximated Date: " + ilnessHistoryDate;
+        String ilnessHistoryWithDate = " - Approximated Date: " + ilnessHistoryDate+" - "+patient.getIlnessHistory() ;
         patient.setIlnessHistory(ilnessHistoryWithDate);
+        String vaccinationHistoryWithDate = vaccinationDate+" - "+patient.getVaccination();
+        patient.setVaccination(vaccinationHistoryWithDate);
         service.updatePatientMedicalInfo(patient, id);
         return "redirect:/list-patients";
     }

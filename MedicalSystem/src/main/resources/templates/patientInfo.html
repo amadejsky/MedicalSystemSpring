@@ -154,9 +154,10 @@
                             <th>Visits</th>
                             <th>Weight</th>
                             <th>Ilness History</th>
-                            <th>Contradictions</th>
+                            <th>Chronic diseases and medications<br> taken on a regular basis</th>
+                            <th>Vaccination history</th>
                             <th>Add Visit</th>
-                            <th>Fill in additional patient medical information</th>
+                            <th>Fill in <br>additional patient medical information</th>
                             <th>Delete Patient</th>
                         </tr>
                         <!--/*@thymesVar id="patient" type="medical.Model.Patient"*/-->
@@ -165,18 +166,31 @@
                             <td th:text="${patient.surname}"></td>
                             <td th:text="${patient.age}"></td>
                             <td th:text="${patient.description}"></td>
-                            <td>
-                                <ul th:if="${patient.visits != null}" th:each="visit : ${patient.visits}">
-                                    <li>
-                                        <a th:href="@{'/editVisitForm/' + ${visit.getId()}}">
-                                            <span th:text="${visit.visitDate}"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <p th:if="${patient.visits == null}">No visits</p>
+<!--                            <td>-->
+<!--                                <ul th:if="${patient.visits != null}" th:each="visit : ${patient.visits}">-->
+<!--                                    <li>-->
+<!--                                        <a th:href="@{'/editVisitForm/' + ${visit.getId()}}">-->
+<!--                                            <span th:text="${visit.visitDate}"></span>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                                <p th:if="${patient.visits == null}">No visits</p>-->
+<!--                            </td>-->
+                                       <td>
+                                              <span th:if="${patient.visits != null}">
+                                               <span th:each="visit, iterStat : ${patient.visits}">
+                                                    <a th:href="@{'/editVisitForm/' + ${visit.id}}" th:text="${visit.visitDate}"></a>
+                                                 <span th:if="${!iterStat.last}">, </span>
+                                                 </span>
+                                              </span>
+                                <span th:if="${patient.visits == null}">No visits</span>
                             </td>
+
                             <td th:text="${#numbers.formatDecimal(patient.weight, 1, 'COMMA', 2, 'POINT')} + ' kg'"></td>
                             <td th:text="${patient.ilnessHistory}"></td>
+                            <td th:text="${patient.chronicDiseasesAndDrugs}"></td>
+                            <td th:text="${patient.vaccination}"></td>
+
                             <td th:text="${patient.contraindications}"></td>
 
                             <td>
@@ -201,10 +215,7 @@
                 </div>
                 </div>
             </div>
-            <p class="my-5">
-                <a href="/edit" class="btn btn-primary btn-lg btn-block">
-                    <i class="fas fa-user-plus ml-2"> Add Patient </i></a>
-            </p>
+
         </div>
     </div>
 </div>

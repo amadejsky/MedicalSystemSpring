@@ -41,8 +41,30 @@ public class Patient {
     @Column(name="ilnessHistory")
     private String ilnessHistory;
 
+    @Column(name="chronicDiseasesAndDrugs")
+    private String chronicDiseasesAndDrugs;
+
+    @Column(name="vaccination")
+    private String vaccination;
+
     @Column(name="contraindications")
     private String contraindications;
+
+    public String getChronicDiseasesAndDrugs() {
+        return chronicDiseasesAndDrugs;
+    }
+
+    public void setChronicDiseasesAndDrugs(String chronicDiseasesAndDrugs) {
+        this.chronicDiseasesAndDrugs = chronicDiseasesAndDrugs;
+    }
+
+    public String getVaccination() {
+        return vaccination;
+    }
+
+    public void setVaccination(String vaccination) {
+        this.vaccination = vaccination;
+    }
 
     public Double getWeight() {
         return weight;

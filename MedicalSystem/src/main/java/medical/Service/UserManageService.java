@@ -106,8 +106,10 @@ public class UserManageService {
         patient.setPlec(patientDetails.getPlec());
         patient.setIlnessHistory(patientDetails.getIlnessHistory());
         patient.setContraindications(patientDetails.getContraindications());
+        patient.setChronicDiseasesAndDrugs(patientDetails.getChronicDiseasesAndDrugs());
+        patient.setVaccination(patientDetails.getVaccination());
 
-        System.out.println("patient weight from service: "+patient.getWeight());
+//        System.out.println("patient weight from service: "+patient.getWeight());
 
         repository.save(patient);
         return patient;

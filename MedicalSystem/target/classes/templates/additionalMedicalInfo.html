@@ -36,7 +36,7 @@
                     <a class="nav-link" href="/list-patients">Patients</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/#">News</a>
+                    <a class="nav-link" href="/news">News</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -85,10 +85,23 @@
                                    id="ilnessHistory" placeholder="ilnessHistory" />
                         </div>
                         <div class="form-group col-md-8">
-                            <label for="ilnessHistoryDate" class="col-form-label">Date of Illness History</label>
+                            <label for="ilnessHistoryDate" class="col-form-label">Date of Illness:</label>
                             <input type="date" class="form-control" id="ilnessHistoryDate" name="ilnessHistoryDate"/>
                         </div>
-
+                        <div class="form-group col-md-8">
+                            <label for="chronicDiseasesAndDrugs" class="col-form-label">Chronic diseases and medications taken on a regular basis</label>
+                            <input type="text" th:field="*{chronicDiseasesAndDrugs}" class="form-control"
+                                   id="chronicDiseasesAndDrugs" placeholder="chronicDiseasesAndDrugs" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="vaccination" class="col-form-label">Vaccination history</label>
+                            <input type="text" th:field="*{vaccination}" class="form-control"
+                                   id="vaccination" placeholder="vaccination" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="vaccinationDate" class="col-form-label">Vacination Date:</label>
+                            <input type="date" class="form-control" id="vaccinationDate" name="vaccinationDate"/>
+                        </div>
                         <div class="form-group col-md-8">
                             <label for="contraindications" class="col-form-label">Contraindications</label>
                             <input type="text" th:field="*{contraindications}" class="form-control"
