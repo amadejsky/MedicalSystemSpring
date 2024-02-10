@@ -110,6 +110,7 @@ public class UserManageService {
         patient.setVaccination(patientDetails.getVaccination());
         patient.setBloodType(patientDetails.getBloodType());
 
+
 //        System.out.println("patient weight from service: "+patient.getWeight());
 
         repository.save(patient);

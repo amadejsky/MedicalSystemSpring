@@ -196,10 +196,18 @@ public class UserManageController
 //        System.out.println("Ilness History: " + patient.getIlnessHistory());
 //        System.out.println("Contraindications: " + patient.getContraindications());
 //        patient.setWeight(patient.getWeight());
-        String ilnessHistoryWithDate = ilnessHistoryDate+" - "+patient.getIlnessHistory() ;
-        patient.setIlnessHistory(ilnessHistoryWithDate);
-        String vaccinationHistoryWithDate = vaccinationDate+" - "+patient.getVaccination();
-        patient.setVaccination(vaccinationHistoryWithDate);
+
+        if (patient.getIlnessHistory() != null && !patient.getIlnessHistory().isBlank()) {
+            String ilnessHistoryWithDate = ilnessHistoryDate + " - " + patient.getIlnessHistory();
+            patient.setIlnessHistory(ilnessHistoryWithDate);
+        }
+     
+        if (patient.getVaccination() != null && !patient.getVaccination().isBlank()) {
+            String vaccinationHistoryWithDate = vaccinationDate + " - " + patient.getVaccination();
+            patient.setVaccination(vaccinationHistoryWithDate);
+        }
+
+
         service.updatePatientMedicalInfo(patient, id);
         return "redirect:/list-patients";
     }
