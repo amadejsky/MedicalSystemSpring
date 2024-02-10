@@ -50,6 +50,18 @@ public class Patient {
     @Column(name="contraindications")
     private String contraindications;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name="bloodType")
+    private BloodType bloodType;
+
+    public BloodType getBloodType() {
+        return bloodType;
+    }
+
+    public void setBloodType(BloodType bloodType) {
+        this.bloodType = bloodType;
+    }
+
     public String getChronicDiseasesAndDrugs() {
         return chronicDiseasesAndDrugs;
     }

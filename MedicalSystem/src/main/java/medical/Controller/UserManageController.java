@@ -196,7 +196,7 @@ public class UserManageController
 //        System.out.println("Ilness History: " + patient.getIlnessHistory());
 //        System.out.println("Contraindications: " + patient.getContraindications());
 //        patient.setWeight(patient.getWeight());
-        String ilnessHistoryWithDate = " - Approximated Date: " + ilnessHistoryDate+" - "+patient.getIlnessHistory() ;
+        String ilnessHistoryWithDate = ilnessHistoryDate+" - "+patient.getIlnessHistory() ;
         patient.setIlnessHistory(ilnessHistoryWithDate);
         String vaccinationHistoryWithDate = vaccinationDate+" - "+patient.getVaccination();
         patient.setVaccination(vaccinationHistoryWithDate);

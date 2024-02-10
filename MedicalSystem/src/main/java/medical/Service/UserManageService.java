@@ -108,6 +108,7 @@ public class UserManageService {
         patient.setContraindications(patientDetails.getContraindications());
         patient.setChronicDiseasesAndDrugs(patientDetails.getChronicDiseasesAndDrugs());
         patient.setVaccination(patientDetails.getVaccination());
+        patient.setBloodType(patientDetails.getBloodType());
 
 //        System.out.println("patient weight from service: "+patient.getWeight());
 

@@ -16,77 +16,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 </head>
 <style>
-    td{
+    td {
         font-family: 'Playfair Display', serif;
         align-items: center;
         min-width: fit-content;
     }
-    .btn-sm{
+    .btn-sm {
         width: 4rem;
         height: 1.5rem;
         text-align: center;
-
     }
     @media (min-width: 1200px) {
-        .add{
+        .add {
             width: 120px;
         }
     }
     table {
         width: 100%;
     }
-    .label{
+    .label, .data {
         display: grid;
         grid-auto-flow: row;
-        width: 10%;
+        width: auto; /* Zmiana z konkretnych wartości na 'auto' */
         min-width: fit-content;
         padding-right: 0px;
-        float: left;
+        /* Usunięcie 'float: left;' dla .label i 'float: right;' dla .data */
         height: 100%;
-
     }
-    .data{
-        display: grid;
-        grid-auto-flow: row;
-        min-width: fit-content;
-        width: 60%;
-        align-content: start;
-        float:right;
-        height: 100%;
-
-    }
-    .container{
+    .container {
         width: 100vw;
         height: 80vh;
-
     }
-    .btn-primary,btn-outline-danger{
+    .btn-primary, .btn-outline-danger {
         height: 1.7rem;
         font-size: 0.8rem;
         text-align: center;
     }
-    .btn-block{
+    .btn-block {
         width: 86%;
         height: 2.6rem;
         font-size: 1.5rem;
     }
-    th:nth-child(even){
+    th:nth-child(even), td:nth-child(even) {
         background-color: #f9f9f9;
-
     }
-    th:nth-child(odd){
+    th:nth-child(odd), td:nth-child(odd) {
         background-color: #ffffff;
-
     }
-    td:nth-child(even){
-        background-color: #f9f9f9;
-
-    }
-    td:nth-child(odd){
-        background-color: #ffffff;
-
-    }
-    .banner{
+    .banner {
         width: 100%;
         height: 300px;
         background-image: url("/visit.jpg");
@@ -96,15 +73,11 @@
     .table th, .table td {
         padding: 0.5rem;
     }
-
-    .label, .data {
-        margin-right: 0;
-        padding-right: 0;
-    }
-    .data{
-        margin-left: -200px;
+    .col-md-10 {
+        /* Usunięcie 'margin-left: -3rem;' */
     }
 </style>
+
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
@@ -146,52 +119,27 @@
             <div class="col-md-10">
                 <div class="container">
                     <table class="table table-striped table-responsive-md">
-                        <tr class="label">
-                            <th>Name</th>
-                            <th>Surname</th>
-                            <th>Age</th>
-                            <th>Description</th>
-                            <th>Visits</th>
-                            <th>Weight</th>
-                            <th>Ilness History</th>
-                            <th>Chronic diseases and medications<br> taken on a regular basis</th>
-                            <th>Vaccination history</th>
-                            <th>Add Visit</th>
-                            <th>Fill in <br>additional patient medical information</th>
-                            <th>Delete Patient</th>
-                        </tr>
                         <!--/*@thymesVar id="patient" type="medical.Model.Patient"*/-->
                         <tr class = "data">
-                            <td th:text="${patient.name}"></td>
-                            <td th:text="${patient.surname}"></td>
-                            <td th:text="${patient.age}"></td>
-                            <td th:text="${patient.description}"></td>
-<!--                            <td>-->
-<!--                                <ul th:if="${patient.visits != null}" th:each="visit : ${patient.visits}">-->
-<!--                                    <li>-->
-<!--                                        <a th:href="@{'/editVisitForm/' + ${visit.getId()}}">-->
-<!--                                            <span th:text="${visit.visitDate}"></span>-->
-<!--                                        </a>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                                <p th:if="${patient.visits == null}">No visits</p>-->
-<!--                            </td>-->
-                                       <td>
-                                              <span th:if="${patient.visits != null}">
-                                               <span th:each="visit, iterStat : ${patient.visits}">
-                                                    <a th:href="@{'/editVisitForm/' + ${visit.id}}" th:text="${visit.visitDate}"></a>
-                                                 <span th:if="${!iterStat.last}">, </span>
-                                                 </span>
-                                              </span>
-                                <span th:if="${patient.visits == null}">No visits</span>
+                            <td><strong>Name:</strong> <span th:text="${patient.name}"></span></td>
+                            <td><strong>Surname:</strong> <span th:text="${patient.surname}"></span></td>
+                            <td><strong>Age:</strong> <span th:text="${patient.age}"></span></td>
+                            <td><strong>Description:</strong> <span th:text="${patient.description}"></span></td>
+                            <td>
+                                <strong>Visits:</strong>
+                                <span th:if="${patient.visits != null and !patient.visits.isEmpty()}">
+        <span th:each="visit, iterStat : ${patient.visits}">
+            <a th:href="@{/editVisitForm/{id}(id=${visit.id})}" th:text="${visit.visitDate}"></a><span th:if="${!iterStat.last}">, </span>
+        </span>
+    </span>
+                                <span th:if="${patient.visits == null or patient.visits.isEmpty()}">No visits</span>
                             </td>
-
-                            <td th:text="${#numbers.formatDecimal(patient.weight, 1, 'COMMA', 2, 'POINT')} + ' kg'"></td>
-                            <td th:text="${patient.ilnessHistory}"></td>
-                            <td th:text="${patient.chronicDiseasesAndDrugs}"></td>
-                            <td th:text="${patient.vaccination}"></td>
-
-                            <td th:text="${patient.contraindications}"></td>
+                            <td><strong>Weight:</strong> <span th:text="${#numbers.formatDecimal(patient.weight, 1, 'COMMA', 2, 'POINT')} + ' kg'"></span></td>
+                            <td><strong>Illness history:</strong> <span th:text="${patient.ilnessHistory}"></span></td>
+                            <td><strong>Chronic diseases and drugs:</strong> <span th:text="${patient.chronicDiseasesAndDrugs}"></span></td>
+                            <td><strong>Vaccination history:</strong> <span th:text="${patient.vaccination}"></span></td>
+                            <td><strong>Blood type:</strong> <span th:text="${patient.bloodType}"></span></td>
+                            <td><strong>Contraindications:</strong> <span th:text="${patient.contraindications}"></span></td>
 
                             <td>
                                 <a th:href="@{/addVisit/{id}(id=${patient.id})}" class="btn btn-primary add">
