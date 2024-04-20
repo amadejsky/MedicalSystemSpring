@@ -8,10 +8,23 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/ms-db.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-db.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/ms-db.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/medical/Controller/UserManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Controller/UserManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/medical/Service/UserManageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Service/UserManageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/medical/Controller/UserManageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/medical/Controller/UserManageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/medical/Service/UserManageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/medical/Service/UserManageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-edit-patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-edit-patient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-visit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/additionalMedicalInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/additionalMedicalInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/edit-visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-visit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fdaapi.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fdaapi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/list-patients.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/list-patients.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/patientInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/patientInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/add-edit-patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/add-edit-patient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/add-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/add-user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/add-visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/add-visit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/additionalMedicalInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/additionalMedicalInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/edit-visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/edit-visit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fdaapi.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fdaapi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/list-patients.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/list-patients.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +107,13 @@
       </method>
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-7d648f2c" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -166,6 +186,27 @@
       <workItem from="1707496684261" duration="891000" />
       <workItem from="1707560724772" duration="4108000" />
       <workItem from="1707567029122" duration="433000" />
+      <workItem from="1707567697755" duration="5000" />
+      <workItem from="1708181500900" duration="610000" />
+      <workItem from="1708256979191" duration="15000" />
+      <workItem from="1708463190513" duration="615000" />
+      <workItem from="1708680589645" duration="18000" />
+      <workItem from="1709030240211" duration="35000" />
+      <workItem from="1709123416544" duration="351000" />
+      <workItem from="1709131647674" duration="43000" />
+      <workItem from="1709132928513" duration="886000" />
+      <workItem from="1709134351707" duration="543000" />
+      <workItem from="1709204291484" duration="567000" />
+      <workItem from="1709233985530" duration="6000" />
+      <workItem from="1709292607551" duration="1063000" />
+      <workItem from="1709293981635" duration="239000" />
+      <workItem from="1709496959346" duration="160000" />
+      <workItem from="1710863617314" duration="17000" />
+      <workItem from="1710929311673" duration="510000" />
+      <workItem from="1711029257553" duration="22000" />
+      <workItem from="1711104465292" duration="15000" />
+      <workItem from="1713366149988" duration="67000" />
+      <workItem from="1713601782279" duration="919000" />
     </task>
     <servers />
   </component>
