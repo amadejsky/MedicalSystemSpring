@@ -111,7 +111,6 @@ public class UserManageController
 
     @RequestMapping(path="/news")
     public String news(Model fda){
-
         return "news";
     }
     @GetMapping("/addVisit/{id}")
@@ -190,12 +189,6 @@ public class UserManageController
     @RequestParam("ilnessHistoryDate") String ilnessHistoryDate,
     @RequestParam("vaccinationDate") String vaccinationDate,
     RedirectAttributes redirectAttributes) throws RecordNotFoundException {
-//        System.out.println("Received patient data:");
-//        System.out.println("Weight: " + patient.getWeight());
-//        System.out.println("Plec: " + patient.getPlec());
-//        System.out.println("Ilness History: " + patient.getIlnessHistory());
-//        System.out.println("Contraindications: " + patient.getContraindications());
-//        patient.setWeight(patient.getWeight());
 
         if (patient.getIlnessHistory() != null && !patient.getIlnessHistory().isBlank()) {
             String ilnessHistoryWithDate = ilnessHistoryDate + " - " + patient.getIlnessHistory();

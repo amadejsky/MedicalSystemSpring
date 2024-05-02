@@ -221,7 +221,6 @@ public Patient addVisitToPatient(Long patientId, Visit visit) throws RecordNotFo
         if (optionalVisit.isPresent()) {
             Visit existingVisit = optionalVisit.get();
             existingVisit.setVisitDate(visit.getVisitDate());
-            // ... inne pola wizyty
             return visitRepository.save(existingVisit);
         } else {
             throw new RecordNotFoundException("No visit record exists for the given id");

@@ -72,27 +72,26 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/news">News</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        API
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/fdaapi">Drug API</a></li>
-                        <li><a class="dropdown-item" href="#">[In Progress]</a></li>
-                        <li><a class="dropdown-item" href="#">[In Progress]</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="/fdaapi">Drug API</a>
                 </li>
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                        API-->
+<!--                    </a>-->
+<!--                    <ul class="dropdown-menu">-->
+<!--                        <li><a class="dropdown-item" href="/fdaapi">Drug API</a></li>-->
+<!--                        <li><a class="dropdown-item" href="#">[In Progress]</a></li>-->
+<!--                        <li><a class="dropdown-item" href="#">[In Progress]</a></li>-->
+<!--                    </ul>-->
+<!--                </li>-->
             </ul>
         </div>
     </div>
 </nav>
 <div class="banner"></div>
-
-
-
     <div class="card" style="padding-top: 50px;">
-    <div class="card-body">
-    
+        <div class="card-body">
         <!--/*@thymesVar id="patient" type="medical.Model.Patient"*/-->
         <div th:switch="${patients}" class="container my-5">
 
