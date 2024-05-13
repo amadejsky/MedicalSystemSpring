@@ -38,15 +38,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">News</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        API
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="fdaapi">Drug API</a></li>
-                        <li><a class="dropdown-item" href="#">[In Progress]</a></li>
-                        <li><a class="dropdown-item" href="#">[In Progress]</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="/fdaapi">Drug API</a>
                 </li>
             </ul>
         </div>
@@ -59,8 +52,8 @@
             <div class="card c1">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
                 </div>
             </div>
         </div>
@@ -68,8 +61,8 @@
             <div class="card c2">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
                 </div>
             </div>
         </div>
@@ -77,8 +70,8 @@
             <div class="card c3">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
                 </div>
             </div>
         </div>
@@ -86,8 +79,8 @@
             <div class="card c4">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
                 </div>
             </div>
         </div>
@@ -95,8 +88,8 @@
             <div class="card c5">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
                 </div>
             </div>
         </div>
@@ -104,15 +97,14 @@
             <div class="card c6">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title"></h5>
+                    <p class="card-text"></p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <div class="footer"></div>
-
 <script>
         const apiKey = '666f4cfbb5334748882e74c322f6de3d';
         const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${apiKey}`;
@@ -121,7 +113,7 @@
         fetch(apiUrl)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('Network response problem!');
                 }
                 return response.json();
             })
@@ -141,14 +133,12 @@
                 });
             })
             .catch(error => {
-                console.error('There was a problem with your fetch operation:', error);
+                console.error('There was a problem with a fetch operation:', error);
             });
     }
-
-        document.addEventListener('DOMContentLoaded', fetchLatestHealthArticles);
+    document.addEventListener('DOMContentLoaded', fetchLatestHealthArticles);
 </script>
 
-</script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>

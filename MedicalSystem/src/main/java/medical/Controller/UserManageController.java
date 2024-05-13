@@ -168,11 +168,7 @@ public class UserManageController
     }
     @PostMapping("/deletevisit/{id}")
     public String deleteVisit(@PathVariable Long id, Visit editedVisit) throws RecordNotFoundException {
-      //  editedVisit.setId(id);
-       // Patient patient = editedVisit.getPatient();
         service.deleteVisitById(id);
-       // System.out.println("delete visit by id after service delete"+editedVisit.getId());
-       // System.out.println("delete visit by id after service delete"+id);
         return "redirect:/list-patients";
     }
     @GetMapping("/additionalMedicalInfoForm/{id}")
