@@ -7,27 +7,8 @@
     <list default="true" id="272a3d2e-fa87-46d6-8ce4-693aef3366f1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/ms-db.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-db.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/ms-db.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/medical/Controller/UserManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/medical/Controller/UserManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-edit-patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-edit-patient.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-visit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/additionalMedicalInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/additionalMedicalInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/edit-visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-visit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fdaapi.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fdaapi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/patientInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/patientInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/medical/Controller/UserManageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/medical/Controller/UserManageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/add-edit-patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/add-edit-patient.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/add-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/add-user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/add-visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/add-visit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/additionalMedicalInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/additionalMedicalInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/edit-visit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/edit-visit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/fdaapi.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fdaapi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/patientInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/patientInfo.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +52,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/CodeProjects/lp-awrsp-todo/settings.gradle&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/CodeProjects/projekt/pp-2023-2024-assessment-project-gr-9/project/pom.xml&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -227,6 +208,17 @@
       <workItem from="1715177791066" duration="19000" />
       <workItem from="1715600089190" duration="2240000" />
       <workItem from="1715603909367" duration="915000" />
+      <workItem from="1715677388982" duration="512000" />
+      <workItem from="1715775427896" duration="63000" />
+      <workItem from="1716819605549" duration="66000" />
+      <workItem from="1716819761186" duration="23000" />
+      <workItem from="1716825307451" duration="802000" />
+      <workItem from="1716886856974" duration="118000" />
+      <workItem from="1716994661515" duration="620000" />
+      <workItem from="1717418194527" duration="60000" />
+      <workItem from="1718205869691" duration="150000" />
+      <workItem from="1718453958437" duration="3246000" />
+      <workItem from="1720174715593" duration="262000" />
     </task>
     <servers />
   </component>

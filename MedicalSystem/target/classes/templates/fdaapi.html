@@ -133,21 +133,17 @@
                 resultsHtml += "<strong>Kwalifikacja:</strong> " + result.qualification + "<br>";
                 resultsHtml += "<strong>Kraj raportu:</strong> " + result.reportercountry + "<br>";
                 resultsHtml += "<strong>Źródło:</strong> " + result.sender.senderorganization + "<br>"+" "+result.sender.sendertype;
-
                 resultsHtml += "</li>";
             });
             resultsHtml += "</ul>";
-
         } else {
             resultsHtml += "<p>Brak wyników dla podanej frazy wyszukiwania.</p>";
         }
-
         responseBox.innerHTML = resultsHtml;
         responseBox.style.border="1px solid #dcdde1";
         responseBox.style.boxShadow = "10px 10px 36px 10px rgba(0,0,0,0.75)";
         responseBox.style.webkitBoxShadow = "10px 10px 36px 10px rgba(0,0,0,0.75)";
         responseBox.style.mozBoxShadow = "10px 10px 36px 10px rgba(0,0,0,0.75)";
-
     }
 </script>
 
